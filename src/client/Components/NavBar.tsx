@@ -1,9 +1,15 @@
 import React from 'react'
 import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 
-import { Layout, Menu } from '../antdComponents'
+import { Layout, Menu, Button } from '../antdComponents'
 const { Header } = Layout
-
+import axios from 'axios'
+const sessionTest = () =>{
+  axios.get('/test')
+    .then(()=>{
+      console.log('test done')
+    })
+}
 // declare navbar items
 const items = [
   {
@@ -44,6 +50,7 @@ const NavBar: React.FC = (props) => {
         items={items}
         style={{ flex: 1, minWidth: 0, backgroundColor: '#3B262C' }}
       />
+      <Button onClick={sessionTest}>session test</Button>
     </Header>
   );
 };

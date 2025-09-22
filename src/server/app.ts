@@ -69,6 +69,11 @@ const isLoggedIn = (req: any, res: any, next: any) => {
   }
 }
 
+app.get('/test', (req, res)=>{
+  console.log(req.session.id)
+  res.send('AAAAAAAAAAAAAAAAA')
+})
+
 app.get('/{*any}', (req, res) => {
   res.sendFile(HTML, (err) => {
     if(err){
