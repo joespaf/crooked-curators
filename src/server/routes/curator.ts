@@ -52,11 +52,9 @@ curatorRouter.get('/:title', async (req, res) => {
     // Take first 4 pieces
     const selection = pieces.slice(0, 4);
     
-    if (selection.length === 0) {
-      return res.status(404).send({ message: 'No artwork found matching your search' });
-    } else {
+
       return res.send(selection);
-    }
+
 
   } catch (err) {
     console.error('Error fetching artwork:', err);
